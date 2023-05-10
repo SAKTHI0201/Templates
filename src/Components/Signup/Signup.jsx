@@ -1,20 +1,14 @@
 import React, { useContext } from "react";
-import ContextProvider from "../Context/Contextprovider";
+import {UserContext} from "../Context/Contextprovider";
 
 function Signup() {
-  const {
-    Email,
-    setEmail,
-    Password,
-    setPassword,
-    Conformpassword,
-    setConformpassword,
-  } = useContext(ContextProvider);
+  const { Email, setEmail, Password, setPassword,Conformpassword,
+    setConformpassword, } = useContext(UserContext);
 
   const handleSignup = () => {
     if (!Email || !Password || !Conformpassword) {
       alert("Email or Password or Conform-Password filed is empty");
-    } else if (Password === Conformpassword) {
+    } else if (Password !== Conformpassword) {
       alert("Password Don't match");
     } else {
       console.log("login");

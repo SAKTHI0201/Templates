@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import UserContext from "../Context/Contextprovider";
+import {UserContext} from "../Context/Contextprovider";
 
 function Signin() {
   const { Email, setEmail, Password, setPassword } = useContext(UserContext);
